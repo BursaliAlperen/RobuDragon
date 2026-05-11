@@ -1,0 +1,434 @@
+body {
+  background-color: #050509;
+}
+
+/* Loading */
+.dragon-loader {
+  position: relative;
+  width: 72px;
+  height: 72px;
+}
+
+.dragon-loader-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-top-color: #ff3b3b;
+  border-left-color: #ffb84d;
+}
+
+.dragon-loader-core {
+  position: absolute;
+  inset: 18px;
+  border-radius: 999px;
+  background: radial-gradient(circle, #ffb84d 0, #b347ff 40%, transparent 70%);
+  box-shadow: 0 0 40px rgba(255, 75, 75, 0.7);
+}
+
+/* Dragon eyes */
+.dragon-eye {
+  position: absolute;
+  top: 15%;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #fff7d9, #ffb84d 35%, #ff3b3b 70%, transparent 100%);
+  box-shadow: 0 0 22px rgba(255, 92, 92, 0.7);
+  opacity: 0.32;
+  transform-origin: center;
+}
+
+.dragon-eye-left {
+  left: 15%;
+}
+
+.dragon-eye-right {
+  right: 15%;
+}
+
+/* Noise overlay */
+.bg-hero-noise {
+  background-image: url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=40');
+  background-size: cover;
+  mix-blend-mode: screen;
+}
+
+/* Hero lava & islands */
+.lava-river {
+  background: radial-gradient(circle at 20% 120%, rgba(255, 59, 59, 0.7), transparent 55%),
+    radial-gradient(circle at 80% 120%, rgba(255, 184, 77, 0.7), transparent 55%);
+  filter: blur(8px);
+  opacity: 0.9;
+}
+
+.islands-layer {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent),
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.08), transparent 60%),
+    radial-gradient(circle at 85% 25%, rgba(255, 255, 255, 0.08), transparent 60%);
+}
+
+/* Dragon silhouette */
+.dragon-silhouette {
+  background-image: radial-gradient(circle at 20% 15%, rgba(255, 184, 77, 0.3), transparent 50%),
+    radial-gradient(circle at 80% 15%, rgba(179, 71, 255, 0.35), transparent 55%),
+    radial-gradient(circle at 50% 80%, rgba(255, 59, 59, 0.45), transparent 60%);
+  mix-blend-mode: screen;
+}
+
+/* Generic UI */
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(to right, #ff3b3b, #ffb84d);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-pill {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: radial-gradient(circle at 0 0, rgba(255, 59, 59, 0.35), transparent 60%);
+}
+
+/* Buttons */
+.btn-primary {
+  position: relative;
+  padding: 9px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(120deg, #ff3b3b, #ffb84d);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  box-shadow: 0 0 30px rgba(255, 80, 80, 0.6);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 40px rgba(255, 120, 80, 0.8);
+  transform: translateY(-1px);
+}
+
+.btn-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 0, rgba(255, 255, 255, 0.26), transparent 40%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.btn-ghost {
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(5, 5, 12, 0.74);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.btn-outline {
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px dashed rgba(255, 255, 255, 0.28);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Tiles & cards */
+.glass-tile {
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: radial-gradient(circle at 0 0, rgba(255, 59, 59, 0.08), transparent 60%),
+    rgba(10, 8, 16, 0.9);
+  padding: 10px 12px;
+}
+
+.mini-pill {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  border-radius: 999px;
+  padding: 5px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: inline-flex;
+  align-items: center;
+  color: #f1f1f1;
+}
+
+.mini-pill-gold {
+  background: radial-gradient(circle at 0 0, rgba(255, 184, 77, 0.25), transparent 60%);
+}
+
+.mini-pill-purple {
+  background: radial-gradient(circle at 0 0, rgba(179, 71, 255, 0.25), transparent 60%);
+}
+
+.mini-pill-red {
+  background: radial-gradient(circle at 0 0, rgba(255, 59, 59, 0.25), transparent 60%);
+}
+
+.section-tag {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+.section-title {
+  font-family: 'Rajdhani', system-ui, sans-serif;
+  font-size: 24px;
+  color: #f9fafb;
+}
+
+/* Feature cards */
+.feature-card {
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(to bottom right, rgba(22, 20, 30, 0.9), rgba(5, 3, 12, 0.95));
+  padding: 14px 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 0 0, rgba(255, 59, 59, 0.15), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+.feature-chip {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+}
+
+.feature-chip-lava {
+  background: rgba(255, 59, 59, 0.14);
+}
+
+.feature-chip-draco {
+  background: rgba(255, 184, 77, 0.14);
+}
+
+.feature-chip-neonPurple {
+  background: rgba(179, 71, 255, 0.14);
+}
+
+/* Marketplace cards */
+.market-card {
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: radial-gradient(circle at 0 0, rgba(255, 59, 59, 0.15), transparent 60%),
+    radial-gradient(circle at 100% 0, rgba(179, 71, 255, 0.15), transparent 60%),
+    rgba(16, 12, 24, 0.96);
+  padding: 14px 16px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.2s ease;
+}
+
+.market-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.26);
+}
+
+.rarity-pip {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: conic-gradient(from 0deg, #ff3b3b, #ffb84d, #b347ff, #ff3b3b);
+}
+
+/* Economy */
+.glass-panel {
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: linear-gradient(
+    to bottom right,
+    rgba(16, 14, 24, 0.95),
+    rgba(6, 4, 12, 0.96)
+  );
+  padding: 16px 18px;
+}
+
+.economy-pill {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 11px;
+  background: rgba(8, 6, 16, 0.9);
+}
+
+.economy-pill h3 {
+  font-size: 11px;
+  font-family: 'Rajdhani', system-ui, sans-serif;
+  color: #f3f4f6;
+  margin-bottom: 2px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+}
+
+.dot-lava {
+  background: #ff3b3b;
+}
+
+.dot-purple {
+  background: #b347ff;
+}
+
+.dot-gold {
+  background: #ffb84d;
+}
+
+.dot-gray {
+  background: #6b7280;
+}
+
+/* Gamepasses */
+.pass-card {
+  position: relative;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(to bottom right, rgba(15, 10, 18, 0.98), rgba(4, 3, 8, 0.98));
+  padding: 12px 14px;
+  overflow: hidden;
+}
+
+.pass-glow {
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(circle at 0 0, rgba(255, 184, 77, 0.35), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pass-card:hover .pass-glow {
+  opacity: 1;
+}
+
+.pass-tag {
+  font-size: 9px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #f9fafb;
+}
+
+.pass-button {
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 7px 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: radial-gradient(circle at 0 0, rgba(255, 59, 59, 0.45), transparent 60%);
+}
+
+/* Community */
+.community-tile {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 9px 10px;
+  background: rgba(8, 6, 16, 0.95);
+}
+
+.tile-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #9ca3af;
+}
+
+/* Stats */
+.stat-card {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 8px 9px;
+  background: rgba(5, 4, 12, 0.96);
+}
+
+.stat-label {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+.stat-value {
+  font-family: 'Rajdhani', system-ui, sans-serif;
+  font-size: 14px;
+}
+
+/* Footer */
+.footer-link {
+  position: relative;
+  padding-bottom: 1px;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  background: linear-gradient(to right, #ff3b3b, #ffb84d);
+  transition: width 0.2s ease;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* Utility shadows */
+.shadow-glow-red {
+  box-shadow: 0 0 30px rgba(255, 75, 75, 0.7);
+}
+
+.shadow-glow-gold {
+  box-shadow: 0 0 30px rgba(255, 184, 77, 0.7);
+}
+
+.shadow-glow-purple {
+  box-shadow: 0 0 30px rgba(179, 71, 255, 0.7);
+}

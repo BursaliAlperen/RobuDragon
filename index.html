@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <title>RobuDragon — AAA Roblox Dragon Empire</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ROBU DRAGON — Forge, evolve, and conquer in a AAA-quality Roblox dragon empire. Hatch dragons, raid bosses, trade in a balanced Draco economy, and convert Draco into Robux with strict anti-exploit systems."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              bgDark: '#050509',
+              bgDeep: '#050308',
+              lava: '#ff3b3b',
+              draco: '#ffb84d',
+              neonPurple: '#b347ff',
+              glass: 'rgba(22,22,30,0.78)',
+            },
+            fontFamily: {
+              display: ['"Rajdhani"', 'system-ui', 'sans-serif'],
+              body: ['"Inter"', 'system-ui', 'sans-serif'],
+            },
+            boxShadow: {
+              'glow-red': '0 0 35px rgba(255, 75, 75, 0.6)',
+              'glow-gold': '0 0 35px rgba(255, 188, 87, 0.6)',
+              'glow-purple': '0 0 35px rgba(180, 80, 255, 0.6)',
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+    />
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@18.2.0",
+          "react-dom": "https://esm.sh/react-dom@18.2.0/client",
+          "framer-motion": "https://esm.sh/framer-motion@11.0.0",
+          "three": "https://esm.sh/three@0.164.0",
+          "gsap": "https://esm.sh/gsap@3.12.5",
+          "gsap/ScrollTrigger": "https://esm.sh/gsap@3.12.5/ScrollTrigger?external=gsap"
+        }
+      }
+    </script>
+  </head>
+  <body class="h-full bg-bgDark text-gray-100 overflow-x-hidden">
+    <!-- Premium loading overlay -->
+    <div
+      id="loading-overlay"
+      class="fixed inset-0 z-[999] flex items-center justify-center bg-gradient-to-b from-black via-bgDeep to-black pointer-events-none"
+    >
+      <div class="flex flex-col items-center gap-4">
+        <div class="dragon-loader">
+          <div class="dragon-loader-ring"></div>
+          <div class="dragon-loader-core"></div>
+        </div>
+        <p class="text-xs tracking-[0.3em] font-display text-gray-400 uppercase">
+          Initializing Dragon Nexus...
+        </p>
+      </div>
+    </div>
+
+    <!-- Cursor-following dragon eyes -->
+    <div
+      id="dragon-eyes"
+      class="pointer-events-none fixed inset-0 z-[80]"
+      aria-hidden="true"
+    >
+      <div class="dragon-eye dragon-eye-left"></div>
+      <div class="dragon-eye dragon-eye-right"></div>
+    </div>
+
+    <!-- Root -->
+    <div id="root"></div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
